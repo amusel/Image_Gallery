@@ -12,11 +12,23 @@ class GalleriesTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        galleriesTitles[0] = GalleriesCollection.sharedInstance.getTitles(
+            forGalleryCollection: GalleriesCollection.sharedInstance.galleries)
+        
+        galleriesTitles[1] = GalleriesCollection.sharedInstance.getTitles(
+            forGalleryCollection: GalleriesCollection.sharedInstance.deletedGalleries)
     }
 
+    @IBAction func addNewGallery(_ sender: UIBarButtonItem) {
+        galleriesTitles[0].append("Untitled".madeUnique(withRespectTo: galleriesTitles[0] + galleriesTitles[1]))
+        GalleriesCollection.sharedInstance.galleries.append(GalleriesCollection.Gallery(title: galleriesTitles[0].last!))
+        tableView.insertRows(at: [IndexPath(row: galleriesTitles[0].count-1, section: 0)], with: .left)
+    }
+    
     // MARK: - Table view data source
-    var galleriesTitles = [["1", "2", "3", "4", "5"], []]
     let sectionTitles = ["", "Recently Deleted"]
+    var galleriesTitles: [[String]] = [[], []]
     
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 2

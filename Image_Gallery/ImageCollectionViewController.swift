@@ -11,7 +11,6 @@ import UIKit
 private let reuseIdentifier = "ImageCell"
 
 class ImageCollectionViewController: UICollectionViewController {
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

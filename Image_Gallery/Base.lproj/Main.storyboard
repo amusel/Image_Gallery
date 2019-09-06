@@ -44,7 +44,13 @@
                             <outlet property="delegate" destination="sMi-uD-Rys" id="pvR-zk-vsH"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Image Galleries" id="nBh-hs-IdA"/>
+                    <navigationItem key="navigationItem" title="Image Galleries" id="nBh-hs-IdA">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="StP-kn-NJH">
+                            <connections>
+                                <action selector="addNewGallery:" destination="sMi-uD-Rys" id="01D-dS-Lz9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Bob-GK-vbx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -123,6 +129,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="cWK-3K-QdO"/>
+        <segue reference="PhA-6Q-e5L"/>
     </inferredMetricsTieBreakers>
 </document>
