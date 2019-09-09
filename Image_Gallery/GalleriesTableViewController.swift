@@ -19,6 +19,13 @@ class GalleriesTableViewController: UITableViewController {
         tableView.addGestureRecognizer(tapGesture)
     }
     
+    override func viewWillLayoutSubviews() {
+        super.viewWillLayoutSubviews()
+        if splitViewController?.preferredDisplayMode != .primaryOverlay {
+            splitViewController?.preferredDisplayMode = .primaryOverlay
+        }
+    }
+    
     
     // MARK: - Table view data source
     let sectionTitles = ["", "Recently Deleted"]

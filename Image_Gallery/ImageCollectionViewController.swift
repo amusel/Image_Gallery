@@ -14,6 +14,7 @@ class ImageCollectionViewController: UICollectionViewController, UICollectionVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.leftBarButtonItem = splitViewController?.displayModeButtonItem
 
         self.collectionView!.dropDelegate = self
         self.collectionView!.dragDelegate = self
