@@ -15,6 +15,8 @@
 		8E902B792322C55D0062C13F /* ImageCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E902B782322C55D0062C13F /* ImageCollectionViewController.swift */; };
 		8E902B7D2322EA0F0062C13F /* GalleriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E902B7C2322EA0F0062C13F /* GalleriesModel.swift */; };
 		8E902B7F2322FDA60062C13F /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E902B7E2322FDA60062C13F /* Utilities.swift */; };
+		8E902B8123241C910062C13F /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E902B8023241C910062C13F /* ImageCollectionViewCell.swift */; };
+		8E902B83232660380062C13F /* GalleryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E902B82232660380062C13F /* GalleryTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		8E902B782322C55D0062C13F /* ImageCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewController.swift; sourceTree = "<group>"; };
 		8E902B7C2322EA0F0062C13F /* GalleriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleriesModel.swift; sourceTree = "<group>"; };
 		8E902B7E2322FDA60062C13F /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		8E902B8023241C910062C13F /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		8E902B82232660380062C13F /* GalleryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +68,8 @@
 				8E902B7C2322EA0F0062C13F /* GalleriesModel.swift */,
 				8E902B762322911E0062C13F /* GalleriesTableViewController.swift */,
 				8E902B782322C55D0062C13F /* ImageCollectionViewController.swift */,
+				8E902B82232660380062C13F /* GalleryTableViewCell.swift */,
+				8E902B8023241C910062C13F /* ImageCollectionViewCell.swift */,
 				8E902B7323226B690062C13F /* supporting files */,
 				8E902B6823226B380062C13F /* Assets.xcassets */,
 				8E902B6D23226B380062C13F /* Info.plist */,
@@ -152,6 +158,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E902B8123241C910062C13F /* ImageCollectionViewCell.swift in Sources */,
+				8E902B83232660380062C13F /* GalleryTableViewCell.swift in Sources */,
 				8E902B792322C55D0062C13F /* ImageCollectionViewController.swift in Sources */,
 				8E902B772322911E0062C13F /* GalleriesTableViewController.swift in Sources */,
 				8E902B6223226B360062C13F /* AppDelegate.swift in Sources */,
