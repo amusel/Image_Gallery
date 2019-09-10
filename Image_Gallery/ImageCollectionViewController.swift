@@ -30,6 +30,29 @@ class ImageCollectionViewController: UICollectionViewController, UICollectionVie
         self.collectionView.reloadData()
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ImageView",
+            let imageViewController = segue.destination as? ImageViewController,
+            let imageCell = sender as? UICollectionViewCell
+        {
+            if let indexPath = collectionView.indexPath(for: imageCell){
+                imageViewController.imageURL = gallery.images[indexPath.item].url
+            }
+        }
+    }
+    
+    //perform seque only if image is valid and loaded
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "ImageView",
+            let imageCell = sender as? ImageCollectionViewCell,
+            imageCell.imageView.image == nil
+        {
+            return false
+        }
+        
+        return true
+    }
+    
     
     // MARK: UICollectionViewDataSource
     var gallery: GalleriesCollection.Gallery! {
@@ -90,7 +113,7 @@ class ImageCollectionViewController: UICollectionViewController, UICollectionVie
     }
     
     
-    //UICollectionViewDelegateFlowLayout
+    // MARK: UICollectionViewDelegateFlowLayout
     let itemSpacing: CGFloat = 5
     var itemWidth: CGFloat = 0 {
         didSet {
@@ -120,6 +143,12 @@ class ImageCollectionViewController: UICollectionViewController, UICollectionVie
         let itemHeight = itemWidth / CGFloat(galleryImage.aspect)
         
         return CGSize(width: itemWidth, height: itemHeight)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView,
+                        layout collectionViewLayout: UICollectionViewLayout,
+                        minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return itemSpacing
     }
     
     @IBAction func zoom(_ sender: UIPinchGestureRecognizer) {
