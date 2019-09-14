@@ -82,17 +82,14 @@ class ImageCollectionViewController: UICollectionViewController, UICollectionVie
         
         let galleryItem = gallery.images[indexPath.item]
         
+        guard let imageCell = cell as? ImageCollectionViewCell else {
+            return cell
+        }
+        imageCell.imageView.image = nil
+        imageCell.label.text = ""
+        imageCell.activitySpinner.startAnimating()
+        
         DispatchQueue.global(qos: .userInitiated).async {
-            guard let imageCell = cell as? ImageCollectionViewCell else {
-                return
-            }
-            
-            DispatchQueue.main.async {
-                imageCell.imageView.image = nil
-                imageCell.label.text = ""
-                imageCell.activitySpinner.startAnimating()
-            }
-            
             if let imageData = try? Data(contentsOf: galleryItem.url) {
                 DispatchQueue.main.async {
                     if imageCell.imageView.image == nil {

@@ -20,16 +20,37 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         if let url = imageURL {
             DispatchQueue.global(qos: .userInitiated).async {
                 if let imageData = try? Data(contentsOf: url) {
+                    
                     DispatchQueue.main.async { [weak self] in
                         self?.activitySpinner.stopAnimating()
                         self?.imageView.image = UIImage(data: imageData)
                         self?.imageView.sizeToFit()
+                        
+                        
+                        // The size of the image
+                        let imageSize = self?.imageView?.image?.size ?? CGSize.zero
+                        
+                        // Size of the display
+                        let displaySize = self?.scrollView.bounds.size ?? CGSize.zero
+                        
+                        // Scrollview content-size must fit the image
+                        self?.scrollView.contentSize = imageSize
+                        
+                        // A scale that will fit the whole image on screen
+                        let zoomScaleThatFitsWholeImage = min(displaySize.width/imageSize.width,
+                                                              displaySize.height/imageSize.height)
+                        self?.scrollView.minimumZoomScale = zoomScaleThatFitsWholeImage
+                        self?.scrollView.maximumZoomScale = 2
+                        self?.scrollView.zoomScale = zoomScaleThatFitsWholeImage
+                        
+                        
                         if let size = self?.imageView.frame.size {
                             self?.scrollView.contentSize = size
                             self?.scrollViewWidth.constant = size.width
                             self?.scrollViewHeight.constant = size.height
                         }
                     }
+                    
                 }
             }
         }
@@ -42,8 +63,6 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
     @IBOutlet weak var scrollView: UIScrollView! {
         didSet {
             scrollView.addSubview(imageView)
-            scrollView.minimumZoomScale = 1/5
-            scrollView.maximumZoomScale = 2
             scrollView.delegate = self
         }
     }
