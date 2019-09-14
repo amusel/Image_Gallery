@@ -43,7 +43,7 @@ class ImageCollectionViewController: UICollectionViewController, UICollectionVie
     
     //perform seque only if image is valid and loaded
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
-        if identifier == "ImageView",
+        if identifier == "ImageView", 
             let imageCell = sender as? ImageCollectionViewCell,
             imageCell.imageView.image == nil
         {

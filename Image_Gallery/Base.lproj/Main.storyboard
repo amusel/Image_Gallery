@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qja-DW-do7">
-    <device id="ipad12_9rounded" orientation="landscape">
+    <device id="ipad12_9rounded" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,7 +15,7 @@
             <objects>
                 <tableViewController clearsSelectionOnViewWillAppear="NO" id="sMi-uD-Rys" customClass="GalleriesTableViewController" customModule="Image_Gallery" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sqe-Gj-gDS">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
@@ -96,7 +96,7 @@
             <objects>
                 <navigationController id="9ph-px-RWY" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F7M-4O-Ae8">
-                        <rect key="frame" x="0.0" y="24" width="990.5" height="50"/>
+                        <rect key="frame" x="0.0" y="24" width="1024" height="50"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -112,7 +112,7 @@
             <objects>
                 <collectionViewController id="xqY-1B-cVE" customClass="ImageCollectionViewController" customModule="Image_Gallery" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="8z3-Ea-smQ">
-                        <rect key="frame" x="0.0" y="0.0" width="990.5" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <gestureRecognizers/>
@@ -164,7 +164,7 @@
                                 </connections>
                             </collectionViewCell>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="PlaceholderCell" id="Kc5-tN-S87">
-                                <rect key="frame" x="617.5" y="0.0" width="373" height="362"/>
+                                <rect key="frame" x="651" y="0.0" width="373" height="362"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                     <rect key="frame" x="0.0" y="0.0" width="373" height="362"/>
@@ -194,18 +194,27 @@
             <objects>
                 <viewController id="QOP-xK-fXy" customClass="ImageViewController" customModule="Image_Gallery" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8hd-6N-uu2">
-                        <rect key="frame" x="0.0" y="0.0" width="990.5" height="1024"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1024" height="1366"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" placeholderIntrinsicWidth="991" placeholderIntrinsicHeight="950" translatesAutoresizingMaskIntoConstraints="NO" id="VGt-mm-HXC">
-                                <rect key="frame" x="0.0" y="74" width="991" height="950"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VGt-mm-HXC">
+                                <rect key="frame" x="17" y="208" width="990" height="950"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="983" placeholderIntrinsicHeight="950" translatesAutoresizingMaskIntoConstraints="NO" id="Gpl-Ru-hWn">
+                                        <rect key="frame" x="0.0" y="0.0" width="983" height="950"/>
+                                    </imageView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" priority="249" constant="950" id="Syv-HW-hEi"/>
-                                    <constraint firstAttribute="width" priority="249" constant="990" id="nd6-db-LMV"/>
+                                    <constraint firstItem="Gpl-Ru-hWn" firstAttribute="top" secondItem="VGt-mm-HXC" secondAttribute="top" id="BOT-Rp-Ktb"/>
+                                    <constraint firstItem="Gpl-Ru-hWn" firstAttribute="leading" secondItem="VGt-mm-HXC" secondAttribute="leading" id="Krq-c4-yzj"/>
+                                    <constraint firstAttribute="bottom" secondItem="Gpl-Ru-hWn" secondAttribute="bottom" id="RQ9-Lb-n3E"/>
+                                    <constraint firstAttribute="height" priority="250" constant="950" id="Syv-HW-hEi"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gpl-Ru-hWn" secondAttribute="trailing" id="Zit-gR-2m1"/>
+                                    <constraint firstAttribute="width" priority="250" constant="990" id="nd6-db-LMV"/>
                                 </constraints>
                             </scrollView>
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="6tL-EF-7SM">
-                                <rect key="frame" x="485.5" y="502" width="20" height="20"/>
+                                <rect key="frame" x="502" y="673" width="20" height="20"/>
                             </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -214,8 +223,8 @@
                             <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VGt-mm-HXC" secondAttribute="trailing" id="Fxi-5S-D8e"/>
                             <constraint firstItem="6tL-EF-7SM" firstAttribute="centerX" secondItem="8hd-6N-uu2" secondAttribute="centerX" id="PEP-Ac-087"/>
                             <constraint firstItem="6tL-EF-7SM" firstAttribute="centerY" secondItem="8hd-6N-uu2" secondAttribute="centerY" id="RGX-ht-SAc"/>
-                            <constraint firstItem="VGt-mm-HXC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="b2H-3K-ZLn" secondAttribute="top" id="d0d-aL-tEe"/>
-                            <constraint firstItem="VGt-mm-HXC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="b2H-3K-ZLn" secondAttribute="leading" id="faI-eu-xbo"/>
+                            <constraint firstItem="VGt-mm-HXC" firstAttribute="top" relation="greaterThanOrEqual" secondItem="8hd-6N-uu2" secondAttribute="top" id="d0d-aL-tEe"/>
+                            <constraint firstItem="VGt-mm-HXC" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="8hd-6N-uu2" secondAttribute="leading" id="faI-eu-xbo"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="VGt-mm-HXC" secondAttribute="bottom" id="gsS-wo-fAw"/>
                             <constraint firstItem="VGt-mm-HXC" firstAttribute="centerX" secondItem="8hd-6N-uu2" secondAttribute="centerX" id="ml1-g7-69U"/>
                         </constraints>
@@ -223,6 +232,7 @@
                     </view>
                     <connections>
                         <outlet property="activitySpinner" destination="6tL-EF-7SM" id="Ucu-2r-4Ly"/>
+                        <outlet property="imageView" destination="Gpl-Ru-hWn" id="uvv-ty-flx"/>
                         <outlet property="scrollView" destination="VGt-mm-HXC" id="mdJ-7g-WD1"/>
                         <outlet property="scrollViewHeight" destination="Syv-HW-hEi" id="qTF-zU-gKW"/>
                         <outlet property="scrollViewWidth" destination="nd6-db-LMV" id="VKD-Bp-jFK"/>

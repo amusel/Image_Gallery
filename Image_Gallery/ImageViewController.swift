@@ -35,10 +35,10 @@ class ImageViewController: UIViewController, UIScrollViewDelegate {
         }
     }
     
-    var imageView = UIImageView()
-    
+    @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var scrollViewWidth: NSLayoutConstraint!
     @IBOutlet weak var scrollViewHeight: NSLayoutConstraint!
+    
     @IBOutlet weak var scrollView: UIScrollView! {
         didSet {
             scrollView.addSubview(imageView)
